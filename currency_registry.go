@@ -50,6 +50,12 @@ func Register(code string, minorUnit int8, symbol, name string) {
 	_currencies[code] = currency
 }
 
+// Unregister unregisters a registered currency.
+func Unregister(code string) {
+	code = normalizeCode(code)
+	delete(_currencies, code)
+}
+
 // Get returns the registered currency by code.
 //
 // It returns nil if the currency is not found.
