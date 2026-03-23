@@ -42,10 +42,11 @@ var (
 )
 
 type Currency struct {
-	Name      string
-	Code      string
-	Symbol    string
-	MinorUnit int8
+	Name      string `json:",omitempty"`
+	Code      string `json:",omitempty"`
+	Symbol    string `json:",omitempty"`
+	Number    int16  `json:",omitempty"`
+	MinorUnit int8   `json:",omitempty"`
 }
 
 func (c Currency) Validate() error {
