@@ -29,7 +29,7 @@ func normalizeCode(code string) string {
 //
 // It panics if the given currency definition is invalid.
 // It also panics if the same currency code is registered more than once.
-func Register(code string, minorUnit int8, symbol, name string) {
+func Register(code string, minorUnit int8, number int16, symbol, name string) {
 	code = normalizeCode(code)
 
 	if _, exists := _currencies[code]; exists {
@@ -40,6 +40,7 @@ func Register(code string, minorUnit int8, symbol, name string) {
 		Name:      name,
 		Code:      code,
 		Symbol:    symbol,
+		Number:    number,
 		MinorUnit: minorUnit,
 	}
 

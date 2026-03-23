@@ -42,9 +42,9 @@ var (
 )
 
 type Currency struct {
-	Name      string `json:",omitempty"`
+	Name      string `json:",omitempty"` // for display
 	Code      string `json:",omitempty"`
-	Symbol    string `json:",omitempty"`
+	Symbol    string `json:",omitempty"` // for display
 	Number    int16  `json:",omitempty"`
 	MinorUnit int8   `json:",omitempty"`
 }
