@@ -60,6 +60,11 @@ func (c Currency) Validate() error {
 	return nil
 }
 
+func (c Currency) WithName(name string) Currency {
+	c.Name = name
+	return c
+}
+
 func (c Currency) scale() (uint64, error) {
 	if err := c.Validate(); err != nil {
 		return 0, err
