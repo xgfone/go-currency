@@ -58,6 +58,15 @@ func Get(code string) (currency Currency, ok bool) {
 	return
 }
 
+// GetAll returns all the registered currencies.
+func GetAll() []Currency {
+	currencies := make([]Currency, 0, len(_currencies))
+	for _, currency := range _currencies {
+		currencies = append(currencies, currency)
+	}
+	return currencies
+}
+
 // GetAllCodes returns all the registered currency codes.
 func GetAllCodes() []string {
 	codes := make([]string, 0, len(_currencies))
